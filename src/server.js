@@ -2,8 +2,8 @@ import express from 'express';
 import pino from 'pino-http';
 import cors from 'cors';
 
-import { getEnvVar } from './utils/getEnvVar.mjs';
-import { getContactById, getContacts } from './services/contacts.mjs';
+import { getEnvVar } from './utils/getEnvVar.js';
+import { getContactById, getContacts } from './services/contacts.js';
 
 const PORT = getEnvVar('PORT', 3000);
 
