@@ -14,7 +14,7 @@ const PORT = getEnvVar('PORT', 3000);
 export const setupServer = () => {
   const app = express();
 
-  app.use(logger);
+  // app.use(logger);
 
   app.use(cors());
 
