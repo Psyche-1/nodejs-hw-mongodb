@@ -15,7 +15,7 @@ import {
   registerController,
   requestResetEmailController,
   resetPasswordController,
-  verifyController,
+  // verifyController,
 } from '../controllers/auth.js';
 
 const authRouter = Router();
@@ -26,7 +26,7 @@ authRouter.post(
   ctrlWrapper(registerController),
 );
 
-authRouter.post('/verify', ctrlWrapper(verifyController));
+// authRouter.post('/verify', ctrlWrapper(verifyController));
 
 authRouter.post(
   '/send-reset-email',
@@ -35,7 +35,7 @@ authRouter.post(
 );
 
 authRouter.post(
-  '/reset-password',
+  '/reset-pwd',
   validateBody(resetPasswordSchema),
   ctrlWrapper(resetPasswordController),
 );
