@@ -3,7 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 import { getEnvVar } from './utils/getEnvVar.js';
-import { logger } from './middlewares/logger.js';
+// import { logger } from './middlewares/logger.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import contactsRouter from './routers/contacts.js';

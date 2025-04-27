@@ -31,6 +31,7 @@ contactsRouter.get(
 
 contactsRouter.post(
   '/',
+  upload.single('photo'),
   validateBody(contactsAddSchema),
   ctrlWrapper(addContactController),
 );
@@ -45,7 +46,7 @@ contactsRouter.put(
 contactsRouter.patch(
   '/:contactId',
   isValidId,
-  upload.single('posterUrl'),
+  upload.single('photo'),
   validateBody(contactsUpdateSchema),
   ctrlWrapper(patchContactController),
 );
