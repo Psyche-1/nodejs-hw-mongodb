@@ -184,8 +184,7 @@
                 "required": [
                   "name",
                   "phoneNumber",
-                  "contactType",
-                  "userId"
+                  "contactType"
                 ],
                 "properties": {
                   "name": {
@@ -256,6 +255,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -426,35 +428,6 @@
               }
             }
           },
-          "201": {
-            "description": "Patch contact by id",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "required": [
-                    "status",
-                    "message",
-                    "data"
-                  ],
-                  "properties": {
-                    "status": {
-                      "type": "integer",
-                      "example": 201
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "Successfully updated contact"
-                    },
-                    "data": {
-                      "type": "object",
-                      "$ref": "#/components/schemas/contact"
-                    }
-                  }
-                }
-              }
-            }
-          },
           "400": {
             "$ref": "#/components/responses/400"
           },
@@ -599,7 +572,7 @@
                   "properties": {
                     "message": {
                       "type": "string",
-                      "example": "6806574881da040ebf45e06 not valid id"
+                      "example": "6806574881da040ebf45e06 not valid id or not valid body"
                     }
                   }
                 }
