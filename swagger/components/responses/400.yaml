@@ -23,4 +23,4 @@ content:
           properties:
             message:
               type: string
-              example: '6806574881da040ebf45e06 not valid id'
+              example: '6806574881da040ebf45e06 not valid id or not valid body'
