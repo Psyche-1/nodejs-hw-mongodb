@@ -77,7 +77,7 @@
           },
           {
             "in": "query",
-            "name": "type",
+            "name": "contactType",
             "schema": {
               "type": "string",
               "enum": [
