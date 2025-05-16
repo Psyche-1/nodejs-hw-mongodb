@@ -1,0 +1,48 @@
+#/swagger/paths/contacts/post.yaml
+
+tags:
+  - Auth
+summary: reset password
+operationId: resetPassword
+description: 'Reset password'
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - password
+          - token
+        properties:
+          password:
+            description: "User's password"
+            type: string
+            example: '123456'
+          token:
+            description: "User's token"
+            type: string
+            example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODBiYzA3Yzk3OTI1ZjYxOTA5MGQ3MGIiLCJlbWFpbCI6InZleW9iMTI0NTNAbnBvMi5jb20iLCJpYXQiOjE3NDU2MDM0NTksImV4cCI6MTc0NTYwMzc1OX0.Dbet28C3aTc84BW7Ytcd4XWC3WnlW72W4mYWBWAFJ2g'
+responses:
+  '200':
+    description: Creates a user
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully reset a password.
+            data:
+              type: object
+  '401':
+    $ref: '../../../components/responses/401.yaml'
