@@ -1,0 +1,50 @@
+#/swagger/paths/contacts/post.yaml
+
+tags:
+  - Auth
+summary: login user
+operationId: loginUser
+description: 'Login user'
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - email
+          - password
+        properties:
+          email:
+            description: "User's email"
+            type: string
+            example: 'andriy7@example.com'
+          password:
+            description: "User's password"
+            type: string
+            example: '123456'
+responses:
+  '200':
+    description: Creates a user
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully logged in an user!
+            data:
+              type: object
+              accessToken:
+                example: CeK8beV7ixVj3txIVkA2EqjSwCrT8LQygUb2233B
+  '401':
+    $ref: '../../../components/responses/401.yaml'
